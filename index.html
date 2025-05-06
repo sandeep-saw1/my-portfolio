@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Personal Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+    }
+  
+    body {
+      background-color: #1e063d;
+      color: #fff;
+      line-height: 1.6;
+    }
+  
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background-color: #1e063d;
+      flex-wrap: wrap;
+    }
+  
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+  
+    nav {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 10px;
+    }
+  
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+  
+    nav a:hover {
+      color: #ffda77;
+    }
+  
+    .btn {
+      padding: 8px 16px;
+      border-radius: 20px;
+      border: 1px solid #fff;
+      background: none;
+      color: #fff;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin: 5px;
+    }
+  
+    .btn:hover {
+      background-color: white;
+      color: #1e063d;
+    }
+  
+    .hero,
+    .skills,
+    .milestones,
+    .technical,
+    .connect {
+      padding: 40px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      opacity: 0;
+      transform: translateY(40px);
+      animation: fadeIn 1s ease forwards;
+    }
+  
+    .hero .content,
+    .technical .content,
+    .skills .text,
+    .milestones .left,
+    .connect .left {
+      flex: 1;
+      min-width: 280px;
+      padding-right: 20px;
+    }
+  
+    .hero img,
+    .technical img,
+    .skills img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 12px;
+      transition: transform 0.3s ease;
+    }
+  
+    .hero img:hover,
+    .technical img:hover {
+      transform: scale(1.05);
+    }
+  
+    h1,
+    h2,
+    h3 {
+      margin-bottom: 12px;
+    }
+  
+    .section-title {
+      font-size: 2rem;
+      font-weight: 700;
+    }
+  
+    .cards,
+    .tech-skills {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+  
+    .card {
+      background-color: #2c0c58;
+      border-radius: 12px;
+      padding: 20px;
+      flex: 1 1 250px;
+      color: white;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+  
+    .card:hover {
+      transform: translateY(-10px);
+      background-color: #3c1a72;
+    }
+  
+    .timeline {
+      border-left: 2px solid #fff;
+      padding-left: 20px;
+      margin-top: 20px;
+    }
+  
+    .year {
+      margin-bottom: 20px;
+      transition: transform 0.3s ease;
+    }
+  
+    .year:hover {
+      transform: translateX(10px);
+    }
+  
+    .footer {
+      background: #1b1008;
+      color: #fff;
+      padding: 40px 20px;
+    }
+  
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+  
+    .footer-bottom {
+      border-top: 1px solid #666;
+      text-align: center;
+      margin-top: 20px;
+      padding-top: 10px;
+    }
+  
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+      }
+  
+      nav {
+        flex-direction: column;
+        gap: 8px;
+      }
+  
+      .hero,
+      .skills,
+      .milestones,
+      .technical,
+      .connect {
+        flex-direction: column;
+        text-align: center;
+      }
+  
+      .hero .content,
+      .technical .content,
+      .skills .text,
+      .milestones .left,
+      .connect .left {
+        padding-right: 0;
+      }
+  
+      .cards,
+      .tech-skills {
+        flex-direction: column;
+        align-items: center;
+      }
+  
+      .card {
+        width: 100%;
+      }
+  
+      .footer-top {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  
+    @media (max-width: 480px) {
+      .section-title {
+        font-size: 1.5rem;
+      }
+  
+      .btn {
+        width: 100%;
+        max-width: 200px;
+      }
+  
+      nav a {
+        font-size: 14px;
+      }
+  
+      .hero img,
+      .technical img {
+        max-width: 100%;
+      }
+    }
+  
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+  
+  
+</head>
+
+<body>
+  <header>
+    <div class="logo">Logo</div>
+    <nav>
+      <a href="#about">About Me</a>
+      <a href="#work">My Work</a>
+      <a href="#contact">Contact Info</a>
+      <a href="#">More Links</a>
+    </nav>
+    <div>
+      <button class="btn">Join</button>
+      <button class="btn">Send</button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="content">
+      <h1 class="section-title">Showcase Your Skills and Achievements Effortlessly</h1>
+      <p>Welcome to your personal portfolio, where your skills and projects shine. Let potential employers discover what makes you unique and talented.</p>
+      <button class="btn">Learn More</button>
+      <button class="btn">Sign Up</button>
+    </div>
+    <img src="img/1000035641.jpg" alt="Hero Image" />
+  </section>
+
+  <section class="hero" style="background-color: #000">
+    <div class="content">
+      <h1 class="section-title">Showcasing My Skills and Creative Projects</h1>
+      <p>Welcome to my personal portfolio! Here, you’ll find a curated collection of my work, skills, and professional journey.</p>
+      <button class="btn" style="background-color: gold; color: black;">View</button>
+      <button class="btn">Contact</button>
+    </div>
+    <img src="img/1000035641.jpg" alt="Modern Building" />
+  </section>
+
+  <section class="skills">
+    <div class="text">
+      <h2 class="section-title">Showcase Your Top Skills Effectively</h2>
+      <p>Highlight your unique abilities with visually appealing icons. Each skill is accompanied by a brief description, making it easy for visitors to understand your expertise.</p>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <h3>Responsive Design for All Devices</h3>
+        <p>Your portfolio looks great on any screen.</p>
+      </div>
+      <div class="card">
+        <h3>Engaging Typography and Color Schemes</h3>
+        <p>Captivate your audience with stunning visuals.</p>
+      </div>
+      <div class="card">
+        <h3>Downloadable Resume for Easy Access</h3>
+        <p>Make it simple for employers to connect.</p>
+      </div>
+    </div>
+    <div>
+      <button class="btn">Learn More</button>
+      <button class="btn">Sign Up</button>
+    </div>
+  </section>
+
+  <section class="milestones" style="background: #000">
+    <div class="left">
+      <h2 class="section-title">Career Timeline: Key Achievements and Milestones</h2>
+      <p>Explore the significant milestones in my career journey. Each achievement reflects my growth and dedication.</p>
+      <button class="btn">View</button>
+      <button class="btn">Details</button>
+    </div>
+    <div class="timeline">
+      <div class="year">
+        <h3>2023 - Recent Achievement</h3>
+        <p>Launched a project that increased user engagement by 30%.</p>
+      </div>
+      <div class="year">
+        <h3>2022 - Team Leadership Role</h3>
+        <p>Promoted to lead a team and manage projects.</p>
+      </div>
+      <div class="year">
+        <h3>2021 - First Major Project</h3>
+        <p>Completed major project with positive feedback.</p>
+      </div>
+      <div class="year">
+        <h3>2020 - Education Completed</h3>
+        <p>Graduated with a degree in my field of study.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="technical">
+    <div class="content">
+      <h2 class="section-title">Showcasing My Key Technical Skills</h2>
+      <p>Explore my core competencies that drive my projects. Each skill is tailored to enhance your experience.</p>
+      <div class="tech-skills">
+        <div>
+          <h4>Web Development</h4>
+          <p>Proficient in HTML, CSS, JavaScript.</p>
+        </div>
+        <div>
+          <h4>Design Principles</h4>
+          <p>Skilled in responsive and user-centered layouts.</p>
+        </div>
+      </div>
+      <button class="btn">Learn More</button>
+      <button class="btn">Contact</button>
+    </div>
+    <img src="img/1000035641.jpg" alt="Profile" />
+  </section>
+
+  <section class="connect" style="background: #f5f0e7; color: #000">
+    <div class="left">
+      <h2 class="section-title">Let's Connect and Collaborate!</h2>
+      <p>Dive deeper into my portfolio and see my latest projects and skills.</p>
+      <button class="btn" style="background-color: #6b4b1a; color: white;">Explore</button>
+      <button class="btn">Contact</button>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div>
+        <h4>Logo</h4>
+        <p>Level 1, 12 Sample St, Sydney NSW 2000</p>
+        <p>1800 123 4567 | info@example.com</p>
+      </div>
+      <div>
+        <h4>About Us</h4>
+        <p>Services</p>
+        <p>Portfolio</p>
+        <p>Testimonials</p>
+      </div>
+      <div>
+        <h4>Contact Us</h4>
+        <p>Careers</p>
+        <p>FAQs</p>
+        <p>Resources</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Resume. All rights reserved.</p>
+      <p>Privacy Policy | Terms of Service | Cookies Settings</p>
+    </div>
+  </footer>
+</body>
+
+</html>
